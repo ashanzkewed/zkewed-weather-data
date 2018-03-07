@@ -1,0 +1,63 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    /*background-color: #fbf8f8!important;*/
+}
+
+#example tbody tr:hover{
+    background-color: lightblue!important;
+
+}
+#example.delte:hover{
+    cursor: pointer!important;
+}
+
+.delete{
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    padding-top: 2px!important;
+    padding-bottom: 2px!important;
+}
+
+
+.head{
+    margin-top: 30px!important;
+}
+.table-head{
+    margin-top: 40px!important;
+}
+
+#addBtn{
+    width: 100%!important;
+}
+
+img:hover{
+    background-color: white!important;
+    cursor: pointer;
+}
+
+/*scroll bar css start*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-button {
+    width: 8px;
+    height:100%;
+}
+::-webkit-scrollbar-track {
+    background:#eee;
+    border: thin solid lightgray;
+    box-shadow: 0px 0px 3px #dfdfdf inset;
+    border-radius:0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #7d7d7d;
+    background: #7d7d7d;
+    border: thin solid #7d7d7d;
+    border-radius:0px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b4b4b4;
+
+}
+/*scroll bar css end*/

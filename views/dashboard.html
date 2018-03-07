@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zkewed-Weather Data Collect</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/dashboard.css">
+    <link rel="stylesheet" href="../public/css/semantic.min.css">
+    <link rel="stylesheet" href="../public/css/dataTables.semanticui.min.css">
+
+
+
+</head>
+<body>
+
+
+
+
+<!--2row start-->
+<div class="row head">
+    <div class="col-md-2 col-sm-1"></div>
+
+    <div class="col-md-3 col-sm-4">
+        <label>Location</label>
+        <div id="sa">
+            <input class=" form-control" type="text" placeholder="Input location..." id="locationText">
+        </div>
+    </div>
+    <div class="col-md-2 col-sm-1"></div>
+    <div class="col-md-3 col-sm-4"></div>
+    <div class="col-md-2 col-sm-2"></div>
+</div>
+<!--2row end-->
+
+<!--2row start-->
+<div class="row head">
+    <div class="col-md-2 col-sm-1"></div>
+
+    <div class="col-md-3 col-sm-4 form">
+        <button class="btn btn-primary" id="addBtn">Submit Data</button>
+    </div>
+    <div class="col-md-2 col-sm-1"></div>
+    <div class="col-md-3 col-sm-4"></div>
+    <div class="col-md-2 col-sm-2"></div>
+</div>
+<!--2row end-->
+
+
+<!--3row start-->
+<div class="row table-head">
+    <div class="col-md-1 col-sm-1"></div>
+    <div class="col-md-10 col-sm-10" style="padding-right:0px!important; padding-left:27px!important;">
+        <table id="example" class="ui celled table" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th width="10%"></th>
+                <th width="50%">Location</th>
+                <th width="10%">Action</th>
+            </tr>
+            </thead>
+            <tbody class="t-body">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-1 col-sm-1"></div>
+</div>
+<!--3row end-->
+<script>
+    window.nodeRequire = require;
+    delete window.require;
+    delete window.exports;
+    delete window.module;
+</script>
+<script src="../public/js/jquery-3.3.1.min.js"></script>
+<script src="../public/js/jquery.dataTables.min.js"></script>
+<script src="../public/js/dataTables.semanticui.min.js"></script>
+<script src="../public/js/semantic.min.js"></script>
+<script src="../public/js/dashboard.js"></script>
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/sweetalert.min.js"></script>
+<script src="../public/js/date.js"></script>
+
+
+</body>
+</html>
