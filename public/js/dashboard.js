@@ -12,7 +12,7 @@ rule.hour = 13;
 rule.minute = 45;
 
 $(document).ready(function () {
-
+    callOpenWeather();
     $('[data-toggle="tooltip"]').tooltip();
     let tbl = $('#example').DataTable();
     $('#locationText').focus();
@@ -183,23 +183,40 @@ $(document).ready(function () {
                 swal("Added Fail!", "Input Location Name!", "warning");
                 $('#locationText').focus();
             } else {
-                var val = false;
+                // var val = false;
+                //
+                // $('#example tr td:first-child').each(function () {
+                //     if ($(this).html() === location.toUpperCase()) {
+                //         val = true;
+                //         return;
+                //     }
+                // });
 
-                $('#example tr td:first-child').each(function () {
-                    if ($(this).html() === location.toUpperCase()) {
-                        val = true;
-                        return;
+
+                var res1 = ipcRenderer.sendSync('isExsist', location.toUpperCase());
+
+                if (res1.recordset.length > 0) {
+                    // console.log(JSON.stringify(res1.recordset));
+                    if (res1.recordset[0].STATUS == "ONLINE") {
+                        swal("Already Exsist!", "You clicked the button!", "warning");
+                    } else {
+                        var res2 = ipcRenderer.sendSync('enableLocation', location.toUpperCase());
+                        if (res2.rowsAffected[0] > 0) {
+                            $('#locationText').val('');
+                            // swal("Added Success!", "You clicked the button!", "success");
+                        } else {
+                            $('#locationText').val('');
+                            swal("Added Fail!", "You clicked the button!", "warning");
+                        }
+                        $('#locationText').focus();
                     }
-                });
-                if (val) {
-                    $('#locationText').val('');
-                    swal("Already Exists!", "You clicked the button!", "warning");
+
+
                 } else {
                     var response = '';
 
                     response = ipcRenderer.sendSync('addLocation', location.toUpperCase());
 
-                    loadTableData();
 
                     if (response.rowsAffected[0] > 0) {
                         $('#locationText').val('');
@@ -210,6 +227,8 @@ $(document).ready(function () {
                     }
                     $('#locationText').focus();
                 }
+
+                loadTableData();
             }
 
         }
