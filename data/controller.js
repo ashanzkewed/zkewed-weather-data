@@ -28,7 +28,7 @@ function addLocation(location, callback) {
 
 var addWeatherData = function (cityId, cityName, date, temp, humidity, pressure, description, weathercode, rain) {
     return new Promise((resolve, reject) => {
-        pool.request().query("INSERT INTO WEATHER_C VALUES('" + cityId + "','" + cityName + "','" + date + "','" + temp + "','" + humidity + "','" + pressure + "','" + description + "','" + weathercode + "','" + rain + "','ONLINE')", (err, result) => {
+        pool.request().query("INSERT INTO WEATHER_C VALUES('" + cityId + "','" + cityName + "','" + date + "','" + temp + "','" + humidity + "','" + pressure + "','" + description + "','" + weathercode + "','" + rain + "')", (err, result) => {
             if (err) {
                 console.log(err);
                 process.exit(0);

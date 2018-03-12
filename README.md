@@ -191,3 +191,47 @@ The package is tested with mocha and chai. You can find the tests in the /test f
 library, open an issue on the github repo (THANKS).
 
 [3]:http://openweathermap.org/appid
+
+
+
+
+
+=====================================================
+{
+  "name": "openweather-apis",
+  "version": "3.3.5",
+  "description": "Simple APIs to use with OpenWeatherMap.org free servicies, request a APPID on http://openweathermap.org/appid and start!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=public/img/Zkewed.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"zkewed-weather-data\""
+  },
+  "keywords": [
+    "openweather",
+    "openweathermap",
+    "meteo",
+    "weather",
+    "weather-api",
+    "apis"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CICCIOSGAMINO/openweather-apis/issues"
+  },
+  "homepage": "https://github.com/CICCIOSGAMINO/openweather-apis",
+  "dependencies": {
+    "electron": "^1.8.3",
+    "internet-available": "^1.0.0",
+    "mssql": "^4.1.0",
+    "msnodesqlv8": "^0.4.11",
+    "node": "^9.5.0",
+    "node-schedule": "^1.3.0",
+    "window": "^4.2.5",
+    "node.ajax": "^2.4.3",
+    "npm": "^5.7.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^9.1.0"
+  }
+}
+
